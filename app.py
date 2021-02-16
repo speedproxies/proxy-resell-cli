@@ -1,4 +1,3 @@
-import http.client
 import sys
 import math
 import os
@@ -35,8 +34,8 @@ def askUser():
 
     print("\n1 - Create new user")
     print("2 - Add bandwidth to user")
-    print("3 - Delete bandwidth to user")
-    print("4 - Check user balance")
+    print("3 - Remove bandwidth to user")
+    print("4 - Check user bandwidth")
     print("5 - Check reseller balance")
     print("0 - Quit\n")
     taskAsk = input()
