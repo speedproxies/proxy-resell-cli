@@ -1,6 +1,6 @@
 # Proxy Resell CLI
 
-CLI made for proxy reseller to manage their proxy needs such as creating users, adding bandwidth and etc...
+CLI made for proxy resellers to manage their residential proxy needs such as creating users, adding bandwidth and etc...
 
 ### Prerequisites
 List of libraries needed along python3
