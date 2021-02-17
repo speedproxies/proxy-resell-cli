@@ -1,6 +1,6 @@
 # Proxy Resell CLI
 
-CLI made for proxy reseller to manage their proxy needs such as creating users, adding bandwidth and etc..
+CLI made for proxy reseller to manage their proxy needs such as creating users, adding bandwidth and etc...
 
 ### Prerequisites
 List of libraries needed along python3
@@ -10,6 +10,9 @@ math
 os
 requests
 ```
+API Key is needed as well (https://speedproxies.net/reseller)
+
+![SpeedProxies Proxy Resell CLI API Key](https://cdn.discordapp.com/attachments/578609872669507618/811387224369266728/unknown.png)
 
 ## Functions
 1. Creating users
