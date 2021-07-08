@@ -11,6 +11,8 @@ import keyboard
 import colorama
 from colorama import Fore, Back, Style
 
+API_KEY = str("KEY")
+
 colorama.init(autoreset=True)
 def askUser():
     print(Fore.CYAN + Style.BRIGHT + '''
@@ -120,7 +122,7 @@ def taskCreate(userCreate):
 
     payload = '{"username":"' + str(userCreate) + '"}'
     headers = {
-      'Authorization': 'ipMYVUu89fSvywu9znyv',
+      'Authorization': API_KEY,
       'Content-Type': 'application/json'
     }
 
@@ -151,7 +153,7 @@ def taskAddBand(userInput, bandInput):
 
     payload = '{"username":"' + str(userInput) + '","bandwidth":"' + str(addBand) + '"}'
     headers = {
-      'Authorization': 'ipMYVUu89fSvywu9znyv',
+      'Authorization': API_KEY,
       'Content-Type': 'application/json'
     }
 
@@ -184,7 +186,7 @@ def taskDeleteBand(userInput, bandInput):
 
     payload = '{"username":"' + str(userInput) + '","bandwidth":"' + str(addBand) + '"}'
     headers = {
-      'Authorization': 'ipMYVUu89fSvywu9znyv',
+      'Authorization': API_KEY,
       'Content-Type': 'application/json'
     }
 
@@ -213,7 +215,7 @@ def taskCheckBal(userInput):
     url = "https://dash.speedproxies.net/api/standard-resi/user-info"
     payload = '{"username":"' + str(userInput) + '"}'
     headers = {
-      'Authorization': 'ipMYVUu89fSvywu9znyv',
+      'Authorization': API_KEY,
       'Content-Type': 'application/json'
     }
 
@@ -246,7 +248,7 @@ def taskGen(userInput, country, hostname, ssl, sticky, format, quantity):
 
     payload = '{"username":"' + str(userInput) + '","country":"' + str(country) + '","hostname":"' + str(hostname) + '","ssl":"' + str(ssl) + '","sticky":"' + str(sticky) + '","format":"' + str(format) + '","quantity":"' + str(quantity) + '"}'
     headers = {
-      'Authorization': 'ipMYVUu89fSvywu9znyv',
+      'Authorization': API_KEY,
       'Content-Type': 'application/json'
     }
 
