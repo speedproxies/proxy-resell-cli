@@ -19,6 +19,6 @@ API Key is needed as well (https://speedproxies.net/reseller)
 2. Adding bandwidth to users
 3. Removing bandwidth from users
 4. Checking users bandwidth
-5. Check reseller account's balance
+5. Proxy Generator
 
-![SpeedProxies Proxy Resell CLI](https://cdn.discordapp.com/attachments/578609872669507618/811385206581493810/unknown.png)
+![SpeedProxies Proxy Resell CLI](https://cdn.discordapp.com/attachments/683383222578839626/862508467611893800/unknown.png)
