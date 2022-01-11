@@ -31,7 +31,7 @@ Y88b  d88P 888 d88P Y8b.     Y8b.     Y88b 888 888        888    Y88..88P .d8""8
 
 ''')
 
-    url = "http://dash.speedproxies.net/"
+    url = "https://speedproxies.net/"
     page = requests.get(url)
     pageStatus = page.status_code
     if pageStatus == 200:
@@ -40,10 +40,10 @@ Y88b  d88P 888 d88P Y8b.     Y8b.     Y88b 888 888        888    Y88..88P .d8""8
         print(Fore.RED + "API HTTP Error Status: " + str(pageStatus))
 
     print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "1" + Fore.WHITE + Style.BRIGHT + "] Create new user")
-    print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "2" + Fore.WHITE + Style.BRIGHT + "] Add banwidth to user")
+    print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "2" + Fore.WHITE + Style.BRIGHT + "] Add bandwidth to user")
     print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "3" + Fore.WHITE + Style.BRIGHT + "] Check user balance")
-    print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "4" + Fore.WHITE + Style.BRIGHT + "] Delete banwidth from user")
-    print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "5" + Fore.WHITE + Style.BRIGHT + "] Proxy Gen")
+    print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "4" + Fore.WHITE + Style.BRIGHT + "] Remove bandwidth from user")
+    print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "5" + Fore.WHITE + Style.BRIGHT + "] Proxy Generator")
     print(Fore.WHITE + Style.BRIGHT + "[" + Fore.CYAN + Style.BRIGHT + "6" + Fore.WHITE + Style.BRIGHT + "] Quit\n")
     taskAsk = input(Fore.WHITE + Style.BRIGHT)
 
@@ -86,8 +86,8 @@ Y88b  d88P 888 d88P Y8b.     Y8b.     Y88b 888 888        888    Y88..88P .d8""8
         userInput = input(Fore.WHITE + Style.BRIGHT + "Username: ").lower()
 
         ssl = "http"
-        hostname = "dns"
-        country = (input(Fore.WHITE + Style.BRIGHT + "Country: ")).capitalize()
+        hostname = "ip"
+        country = (input(Fore.WHITE + Style.BRIGHT + "Country: "))
         sticky = (input(Fore.WHITE + Style.BRIGHT + "Sticky/Randomize: ")).lower()
         quantity = input(Fore.WHITE + Style.BRIGHT + "List Size [10/100/1000]: ")
         print(Fore.WHITE + Style.BRIGHT + "Format:")
@@ -131,9 +131,15 @@ def taskCreate(userCreate):
 
     createdUser = jsonResponse["data"]["username"]
     createdPassword = jsonResponse["data"]["proxy_authkey"]
+    createdStatus = jsonResponse["status"]
+    createdMessage = jsonResponse["message"]
 
-    print(Fore.WHITE + Style.BRIGHT + "Proxy Username: " + str(createdUser))
-    print(Fore.WHITE + Style.BRIGHT + "Proxy Username: " + str(createdPassword))
+    if response == 200:
+        print(Fore.WHITE + Style.BRIGHT + "Proxy Username: " + str(createdUser))
+        print(Fore.WHITE + Style.BRIGHT + "Proxy Password: " + str(createdPassword))
+    else:
+        print(Fore.WHITE + Style.BRIGHT + "Error Creating Username: (Status " + str(createdStatus) +") " + str(createdMessage))
+
 
     main_screen = str(input(Fore.WHITE + Style.BRIGHT + "\nFinished (yes)? \n")).lower()
 
